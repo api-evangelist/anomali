@@ -1,20 +1,58 @@
 aid: anomali
 name: Anomali
-description: 'Anomali is a company surfaced as a portfolio company of general-catalyst and added to the
-  API Evangelist network as a stub for enrichment. Sector: enterprise. This profile is a lead awaiting
-  the enrichment pipeline.'
+description: >-
+  Anomali is an enterprise cybersecurity vendor whose Agentic SOC Platform unifies
+  threat intelligence, security data, and agentic AI. Its flagship ThreatStream is
+  a leading Threat Intelligence Platform (TIP) that operationalizes indicators of
+  compromise across a Unified Security Data Lake with SIEM, SOAR, and XDR
+  capabilities. Anomali exposes a ThreatStream REST API (api.threatstream.com) for
+  managing intelligence, observables, investigations, and integrations, and
+  maintains a partner marketplace of prebuilt integrations. This API Evangelist
+  profile was seeded from the general-catalyst portfolio and enriched from
+  Anomali's public surfaces (status page, security/responsible-disclosure program,
+  privacy and terms pages, GitHub organization, and blog).
 url: https://raw.githubusercontent.com/api-evangelist/anomali/refs/heads/main/apis.yml
 x-type: company
 x-source: general-catalyst-portfolio
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
 modified: '2026-07-17'
+image: https://cdn.prod.website-files.com/6453db2ad32b573c40a15c49/6627ff6e7f8cb72de4b695f6_Anomali-OpenGraph-2024.webp
 tags:
 - Company
 - Enterprise
-apis: []
+- Cybersecurity
+- Threat Intelligence
+- Security
+- SIEM
+- SOAR
+- XDR
+- Threat Intelligence Platform
+apis:
+- name: Anomali ThreatStream API
+  description: >-
+    REST API for the Anomali ThreatStream Threat Intelligence Platform — manage
+    threat intelligence, observables, investigations, imports, and integrations.
+    Authentication uses an apikey credential in the Authorization header. Detailed
+    reference is available to authenticated ThreatStream customers.
+  humanURL: https://www.anomali.com/products/threatstream
+  baseURL: https://api.threatstream.com
+  properties:
+  - type: StatusPage
+    url: https://status.anomali.com
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -23,3 +61,30 @@ maintainers:
 common:
 - type: Website
   url: https://www.anomali.com
+- type: Blog
+  url: https://www.anomali.com/blog
+- type: Support
+  url: https://www.anomali.com/customer-success
+- type: GitHubOrganization
+  url: https://github.com/anomali
+- type: TermsOfService
+  url: https://www.anomali.com/terms-of-service
+- type: PrivacyPolicy
+  url: https://www.anomali.com/privacy-policy
+- type: Marketplace
+  url: https://www.anomali.com/marketplace
+- type: StatusPage
+  url: https://status.anomali.com
+- type: Security
+  url: https://www.anomali.com/security
+- type: Lifecycle
+  url: lifecycle/anomali-lifecycle.yml
+- type: VulnerabilityDisclosure
+  url: security/anomali-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/anomali-domain-security.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

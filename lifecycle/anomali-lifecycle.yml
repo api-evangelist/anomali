@@ -1,0 +1,24 @@
+generated: '2026-07-17'
+method: searched
+source: https://status.anomali.com
+status_page:
+  url: https://status.anomali.com
+  provider: Atlassian Statuspage
+  components:
+  - ThreatStream SaaS
+  - Security Analytics
+  - Copilot
+  - ThreatStream SaaS EU
+  - Security Analytics EU
+  - Copilot EU
+security_advisories:
+  page: https://www.anomali.com/security
+  feed: https://www.anomali.com/security-advisory/rss.xml
+notes: >-
+  Anomali is an enterprise threat-intelligence vendor; it publishes an Atlassian
+  Statuspage covering its SaaS surfaces (ThreatStream, Security Analytics,
+  Copilot) in both US and EU regions, plus a product security-advisory feed. No
+  public deprecation policy or SLA document was found on the public site (both
+  are governed by enterprise contracts). deprecation_operations left empty — no
+  public OpenAPI is available to derive deprecated operations from.
+deprecated_operations: []
