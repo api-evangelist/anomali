@@ -1,0 +1,29 @@
+name: ThreatStream MCP Server
+generated: '2026-10-20'
+method: probed
+source: https://api.threatstream.com/.well-known/oauth-protected-resource
+url: https://api.threatstream.com/mcp
+deployment:
+  mode: remote
+  endpoint: https://api.threatstream.com/mcp
+  auth: api-key
+  verified: probed
+evidence:
+- url: https://api.threatstream.com/.well-known/oauth-protected-resource
+  status: 200
+  note: resource https://api.threatstream.com/mcp, resource_name "ThreatStream MCP Server", authorization_servers [https://api.threatstream.com]
+- url: https://api.threatstream.com/mcp
+  status: 401
+  note: anonymous tools/list -> 401, WWW-Authenticate ApiKey realm="MCP"
+- url: https://api.threatstream.com/docs/mcp/
+  status: 404
+  note: resource_documentation named in the protected-resource document returns 404
+scopes:
+- MCP_ENRICHMENTS_ACCESS
+- MCP_READ_PIR_DATA
+- MCP_READ_TS_DATA
+- MCP_SA_ACCESS
+- MCP_WRITE_PIR_DATA
+- MCP_WRITE_TS_DATA
+tools: []
+note: Tool list is auth-gated and no public documentation lists tool names; no tools recorded.

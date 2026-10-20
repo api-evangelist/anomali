@@ -1,0 +1,247 @@
+openapi: 3.1.0
+info:
+  title: Anomali API
+  version: '2026-10-20'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-20: 9 operation(s) read from 1 public documentation page(s) (each operation
+    names its page in x-source). This is not the provider''s published contract; Anomali has published no machine-readable contract that the pipeline
+    could find. Engine: anthropic.'
+  x-evidence-tiers:
+    code-example: 5
+    documentation: 4
+    pages-with-code: 1
+    pages-read: 1
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-20'
+  x-generator: generate-contract-from-docs.py
+  x-engine: anthropic
+  x-sources:
+  - https://docs.anomali.com/Content/ThreatStream API/introduction_api.htm
+servers:
+- url: https://api.threatstream.com
+paths:
+  /api/v1/orgadmin:
+    get:
+      operationId: get_api_v1_orgadmin
+      tags:
+      - Api
+      summary: GET /api/v1/orgadmin
+      x-source: https://docs.anomali.com/Content/ThreatStream API/introduction_api.htm
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl ''https://api.threatstream.com/api/v1/orgadmin/'' -H ''Authorization: apikey <username>:<api_key>''
+
+          Windows Shell
+
+          Copy'
+  /api/v1/orgadmin/:
+    get:
+      operationId: get_api_v1_orgadmin
+      tags:
+      - Api
+      summary: Retrieve organization admin information.
+      x-source: https://docs.anomali.com/Content/ThreatStream API/introduction_api.htm
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /api/v1/threat_model_search:
+    get:
+      operationId: get_api_v1_threat_model_search
+      tags:
+      - Api
+      summary: Search for threat model entities.
+      x-source: https://docs.anomali.com/Content/ThreatStream API/introduction_api.htm
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /api/v2/intelligence:
+    get:
+      operationId: get_api_v2_intelligence
+      tags:
+      - Api
+      summary: GET /api/v2/intelligence
+      x-source: https://docs.anomali.com/Content/ThreatStream API/introduction_api.htm
+      parameters:
+      - name: itype
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetApiV2IntelligenceResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl ''https://api.threatstream.com/api/v2/intelligence/?itype=bot_ip'' -H ''Authorization: apikey <username>:<api_key>''
+
+          Note: Specifying usernames and API Keys in the URL of the request will be deprecated as an available authentication method for ThreatStream
+          in a future release.
+
+          Authenticating to ThreatStream with an OAuth 2.0 Token
+
+          Note: This is a limited-availability feature. Contact Anomali Cust'
+  /api/v2/intelligence/:
+    get:
+      operationId: get_api_v2_intelligence
+      tags:
+      - Api
+      summary: Retrieve threat intelligence data with filtering and limiting options.
+      x-source: https://docs.anomali.com/Content/ThreatStream API/introduction_api.htm
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /api/v2/intelligence/import:
+    post:
+      operationId: post_api_v2_intelligence_import
+      tags:
+      - Api
+      summary: Import observables into ThreatStream.
+      x-source: https://docs.anomali.com/Content/ThreatStream API/introduction_api.htm
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /api/v2/intelligence/{linktonextpage}:
+    get:
+      operationId: get_api_v2_intelligence_linktonextpage
+      tags:
+      - Api
+      summary: GET /api/v2/intelligence/{linkToNextPage}
+      x-source: https://docs.anomali.com/Content/ThreatStream API/introduction_api.htm
+      parameters:
+      - name: linktonextpage
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl ''https://api.threatstream.com/api/v2/intelligence/<link_to_next_page>'' -H ''Authorization: apikey <username>:<api_key>''
+
+          where <link_to_next_page> is the value to use to retrieve the next set of results
+
+          Repeat this process iteratively until next = null. The total number of results you will retrieve by making the intelligence API call
+          iteratively is 6414.
+
+          Note: The total_count value may not repr'
+  /api/{apiversion}:
+    get:
+      operationId: get_api_apiversion
+      tags:
+      - Api
+      summary: GET /api/{apiVersion}
+      x-source: https://docs.anomali.com/Content/ThreatStream API/introduction_api.htm
+      parameters:
+      - name: apiversion
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetApiApiversionResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl Commands on Linux and Windows Machines
+
+          Supported API Endpoints
+
+          Anomali ThreatStream is accessible through REST APIs available to all Enterprise customers. These APIs support bi-directional interaction
+          with the ThreatStream platform.
+
+          You can use the APIs to retrieve threat intelligence for integration with third-party tools, import observables into ThreatStream, manage
+          threat model entities, i'
+  /oauth/token:
+    post:
+      operationId: post_oauth_token
+      tags:
+      - Oauth
+      summary: POST /oauth/token
+      x-source: https://docs.anomali.com/Content/ThreatStream API/introduction_api.htm
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostOauthTokenResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl -X POST https://api.threatstream.com/oauth/token \-H "Content-Type: application/x-www-form-urlencoded"  -d "grant_type=client_credentials"  -d
+          "client_id=<YOUR_CLIENT_ID>"  -d "client_secret=<YOUR_CLIENT_SECRET>"
+
+          If the request is successful, you will receive a JSON response similar to this:
+
+          Copy
+
+          {"access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+
+          "token_type": "Bearer",
+
+          "expires_in":'
+components:
+  schemas:
+    GetApiV2IntelligenceResponse:
+      type: object
+      properties:
+        access_token:
+          type: string
+        token_type:
+          type: string
+        expires_in:
+          type: integer
+    GetApiApiversionResponse:
+      type: object
+      properties:
+        access_token:
+          type: string
+        token_type:
+          type: string
+        expires_in:
+          type: integer
+    PostOauthTokenResponse:
+      type: object
+      properties:
+        access_token:
+          type: string
+        token_type:
+          type: string
+        expires_in:
+          type: integer
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: Authorization
+security:
+- apiKey: []
+tags:
+- name: Api
+- name: Oauth

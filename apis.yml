@@ -1,21 +1,24 @@
 aid: anomali
+
 name: Anomali
-description: >-
-  Anomali is an enterprise cybersecurity vendor whose Agentic SOC Platform unifies
-  threat intelligence, security data, and agentic AI. Its flagship ThreatStream is
-  a leading Threat Intelligence Platform (TIP) that operationalizes indicators of
-  compromise across a Unified Security Data Lake with SIEM, SOAR, and XDR
-  capabilities. Anomali exposes a ThreatStream REST API (api.threatstream.com) for
-  managing intelligence, observables, investigations, and integrations, and
-  maintains a partner marketplace of prebuilt integrations. This API Evangelist
-  profile was seeded from the general-catalyst portfolio and enriched from
-  Anomali's public surfaces (status page, security/responsible-disclosure program,
+
+description: Anomali is an enterprise cybersecurity vendor whose Agentic SOC Platform unifies threat intelligence, security data, and agentic
+  AI. Its flagship ThreatStream is a leading Threat Intelligence Platform (TIP) that operationalizes indicators of compromise across a Unified
+  Security Data Lake with SIEM, SOAR, and XDR capabilities. Anomali exposes a ThreatStream REST API (api.threatstream.com) for managing intelligence,
+  observables, investigations, and integrations, and maintains a partner marketplace of prebuilt integrations. This API Evangelist profile was
+  seeded from the general-catalyst portfolio and enriched from Anomali's public surfaces (status page, security/responsible-disclosure program,
   privacy and terms pages, GitHub organization, and blog).
+
 url: https://raw.githubusercontent.com/api-evangelist/anomali/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: general-catalyst-portfolio
-x-tier: stub
-x-tier-reason: portfolio-lead
+
+x-tier: profiled
+
+x-tier-reason: enrichment pass 2026-10-20 (local-v5; was portfolio-lead)
+
 deliveryModel:
   model: saas
   open_source: false
@@ -27,6 +30,7 @@ deliveryModel:
   - pricing
   generated: '2026-08-28'
   method: derived
+
 accessModel:
   pricing: unknown
   onboarding: unknown
@@ -38,10 +42,15 @@ accessModel:
   source: []
   generated: '2026-07-22'
   method: derived
+
 specificationVersion: '0.23'
+
 created: '2026-07-17'
-modified: '2026-07-17'
+
+modified: '2026-10-20'
+
 image: https://cdn.prod.website-files.com/6453db2ad32b573c40a15c49/6627ff6e7f8cb72de4b695f6_Anomali-OpenGraph-2024.webp
+
 tags:
 - Company
 - Enterprise
@@ -52,24 +61,50 @@ tags:
 - SOAR
 - XDR
 - Threat Intelligence Platform
-apis:
-- name: Anomali ThreatStream API
-  description: >-
-    REST API for the Anomali ThreatStream Threat Intelligence Platform — manage
-    threat intelligence, observables, investigations, imports, and integrations.
-    Authentication uses an apikey credential in the Authorization header. Detailed
-    reference is available to authenticated ThreatStream customers.
-  humanURL: https://www.anomali.com/products/threatstream
-  baseURL: https://api.threatstream.com
-  properties:
-  - type: StatusPage
-    url: https://status.anomali.com
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Deprecation
+  url: lifecycle/anomali-lifecycle.yml
+- type: RateLimits
+  url: rate-limits/anomali-rate-limits.yml
+- type: Spectral
+  url: rules/anomali-rules.yml
+- type: JSONLD
+  url: json-ld/anomali-context.jsonld
+- type: Vocabulary
+  url: vocabulary/anomali-vocabulary.yml
+- type: DataModel
+  url: data-model/anomali-data-model.yml
+- type: Conventions
+  url: conventions/anomali-conventions.yml
+- type: Authentication
+  url: authentication/anomali-authentication.yml
+- type: OAuthScopes
+  url: scopes/anomali-scopes.yml
+- type: Conformance
+  url: conformance/anomali-conformance.yml
+- type: LLMsTxt
+  url: llms/anomali-llms.txt
+- type: SecurityTxt
+  url: well-known/anomali-status-security.txt
+- type: WellKnown
+  url: well-known/anomali-well-known.yml
+- type: Hosts
+  url: hosts/anomali-hosts.yml
+- type: IntegrationEdges
+  url: integrations/anomali-integration-edges.yml
+- type: Vendors
+  url: vendors/anomali-vendors.yml
+- type: SDKs
+  url: https://www.anomali.com/marketplace/sdks
+- type: Leadership
+  url: https://www.anomali.com/company/leadership
 - type: Website
   url: https://www.anomali.com
 - type: Blog
@@ -84,6 +119,18 @@ common:
   url: https://www.anomali.com/privacy-policy
 - type: Marketplace
   url: https://www.anomali.com/marketplace
+- type: Documentation
+  url: https://docs.anomali.com/Content/Introduction/welcome_Anomali.htm
+- type: APIReference
+  url: https://docs.anomali.com/Content/ThreatStream%20API/supported_endpoints.htm
+- type: GettingStarted
+  url: https://docs.anomali.com/Content/ThreatStream%20API/introduction_api.htm
+- type: ChangeLog
+  url: https://docs.anomali.com/Content/TS_Release_Notes.htm
+- type: Security
+  url: https://www.anomali.com/security
+- type: Newsroom
+  url: https://www.anomali.com/press-room/news
 - type: StatusPage
   url: https://status.anomali.com
 - type: Security
@@ -94,8 +141,59 @@ common:
   url: security/anomali-vulnerability-disclosure.yml
 - type: DomainSecurity
   url: security/anomali-domain-security.yml
+
+apis:
+- name: Anomali ThreatStream API
+  description: REST API for the Anomali ThreatStream Threat Intelligence Platform — manage threat intelligence, observables, investigations, imports,
+    and integrations. Authentication uses an apikey credential in the Authorization header. Detailed reference is available to authenticated ThreatStream
+    customers.
+  humanURL: https://www.anomali.com/products/threatstream
+  baseURL: https://api.threatstream.com
+  properties:
+  - type: StatusPage
+    url: https://status.anomali.com
+  - type: Documentation
+    url: https://docs.anomali.com/Content/ThreatStream%20API/introduction_api.htm
+  aid: anomali:anomali-threatstream-api
+- name: Anomali ThreatStream MCP Server
+  description: Remote Model Context Protocol server for ThreatStream at https://api.threatstream.com/mcp. Its OAuth protected-resource metadata
+    (/.well-known/oauth-protected-resource) names the resource "ThreatStream MCP Server" and scopes MCP_READ_TS_DATA, MCP_WRITE_TS_DATA, MCP_READ_PIR_DATA,
+    MCP_WRITE_PIR_DATA, MCP_ENRICHMENTS_ACCESS and MCP_SA_ACCESS; anonymous tools/list returns 401 (WWW-Authenticate ApiKey realm="MCP").
+  humanURL: https://docs.anomali.com/Content/ThreatStream%20API/introduction_api.htm
+  baseURL: https://api.threatstream.com/mcp
+  properties:
+  - type: MCPServer
+    url: mcp/anomali-mcp.yml
+  aid: anomali:anomali-threatstream-mcp-server
+- aid: anomali:anomali-api
+  name: Anomali API
+  description: 'Anomali API as documented publicly: 9 operations. Contract generated from the documentation by API Evangelist (2026-10-20); not
+
+    the provider''s own document.'
+  humanURL: https://docs.anomali.com/Content/ThreatStream API/introduction_api.htm
+  baseURL: https://api.threatstream.com
+  properties:
+  - type: OpenAPI
+    url: openapi/_ae-authored/anomali-openapi-generated.yml
+    x-provenance: generated
+  - type: JSONSchema
+    url: json-schema/anomali-get-api-apiversion-response-schema.json
+  - type: JSONSchema
+    url: json-schema/anomali-get-api-v2-intelligence-response-schema.json
+  - type: JSONSchema
+    url: json-schema/anomali-post-oauth-token-response-schema.json
+
 x-enrichment:
-  date: '2026-07-19'
-  status: backfilled
-  pass: local-v1
-  note: backfilled from .gitignore signal + verified work evidence
+  date: '2026-10-20'
+  status: enriched
+  artifacts_added: 6
+  pass: local-v5
+x-coverage:
+  state: covered
+  reason: covered
+  detail: >-
+    Public ThreatStream API docs on docs.anomali.com read in full; no machine-readable spec is served, so a
+    9-operation contract was generated from the docs and marked generated (openapi/_ae-authored/).
+  evidence:
+  - url: https://docs.anomali.com/Content/Introduction/welcome_Anomali.htm
+    status: 200

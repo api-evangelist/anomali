@@ -1,0 +1,19 @@
+{
+  "resource": "https://api.threatstream.com/mcp",
+  "authorization_servers": [
+    "https://api.threatstream.com"
+  ],
+  "scopes_supported": [
+    "MCP_ENRICHMENTS_ACCESS",
+    "MCP_READ_PIR_DATA",
+    "MCP_READ_TS_DATA",
+    "MCP_SA_ACCESS",
+    "MCP_WRITE_PIR_DATA",
+    "MCP_WRITE_TS_DATA"
+  ],
+  "bearer_methods_supported": [
+    "header"
+  ],
+  "resource_name": "ThreatStream MCP Server",
+  "resource_documentation": "https://api.threatstream.com/docs/mcp/"
+}

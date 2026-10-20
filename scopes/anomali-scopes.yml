@@ -1,0 +1,12 @@
+name: Anomali OAuth scopes
+generated: '2026-10-20'
+method: probed
+source: https://api.threatstream.com/.well-known/oauth-protected-resource
+scopes:
+- {name: MCP_ENRICHMENTS_ACCESS, resource: https://api.threatstream.com/mcp}
+- {name: MCP_READ_PIR_DATA, resource: https://api.threatstream.com/mcp}
+- {name: MCP_READ_TS_DATA, resource: https://api.threatstream.com/mcp}
+- {name: MCP_SA_ACCESS, resource: https://api.threatstream.com/mcp}
+- {name: MCP_WRITE_PIR_DATA, resource: https://api.threatstream.com/mcp}
+- {name: MCP_WRITE_TS_DATA, resource: https://api.threatstream.com/mcp}
+note: Scope names published only as scopes_supported in the protected-resource document; no descriptions are published.

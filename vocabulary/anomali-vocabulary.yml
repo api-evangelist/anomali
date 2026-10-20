@@ -1,0 +1,35 @@
+generated: '2026-10-20'
+method: derived
+generator: derive-vocabulary.py
+source: openapi/_ae-authored/anomali-openapi-generated.yml
+vocabulary:
+  name: Anomali Domain Vocabulary
+  description: 'Terms declared by Anomali''s own API contract: its resource groups, objects and enumerations, with the contract''s definitions.
+    Derived, not authored.'
+  version: '2026-10-20'
+  terms:
+  - term: GetApiV2IntelligenceResponse
+    definition: 'Object declared by the contract with fields: access_token, token_type, expires_in.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/anomali-openapi-generated.yml#/components/schemas/GetApiV2IntelligenceResponse
+  - term: GetApiApiversionResponse
+    definition: 'Object declared by the contract with fields: access_token, token_type, expires_in.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/anomali-openapi-generated.yml#/components/schemas/GetApiApiversionResponse
+  - term: PostOauthTokenResponse
+    definition: 'Object declared by the contract with fields: access_token, token_type, expires_in.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/anomali-openapi-generated.yml#/components/schemas/PostOauthTokenResponse
+  - term: Api
+    definition: 'Resource group in the contract; its operation GET /api/v1/orgadmin: GET /api/v1/orgadmin'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/anomali-openapi-generated.yml
+  - term: Oauth
+    definition: 'Resource group in the contract; its operation POST /oauth/token: POST /oauth/token'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/anomali-openapi-generated.yml

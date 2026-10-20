@@ -1,0 +1,22 @@
+name: Anomali authentication
+generated: '2026-10-20'
+method: searched
+source: https://docs.anomali.com/Content/ThreatStream%20API/introduction_api.htm
+docs: https://docs.anomali.com/Content/ThreatStream%20API/introduction_api.htm
+schemes:
+- name: apikey
+  type: apiKey
+  in: header
+  header: Authorization
+  format: "apikey <username>:<api_key>"
+  note: Username is the ThreatStream account email; key from My Account. Credentials in the URL are slated for deprecation.
+- name: oauth2
+  type: oauth2
+  flow: clientCredentials
+  tokenUrl: https://api.threatstream.com/oauth/token
+  token_lifetime_seconds: 900
+  note: Limited-availability feature; client ID and secret generated in ThreatStream Account Settings.
+- name: mcp-apikey
+  type: apiKey
+  resource: https://api.threatstream.com/mcp
+  note: MCP endpoint answers 401 with WWW-Authenticate ApiKey realm="MCP" (probed 2026-10-20).

@@ -1,4 +1,4 @@
-generated: '2026-07-17'
+generated: '2026-10-20'
 method: searched
 source: https://status.anomali.com
 status_page:
@@ -14,11 +14,19 @@ status_page:
 security_advisories:
   page: https://www.anomali.com/security
   feed: https://www.anomali.com/security-advisory/rss.xml
-notes: >-
-  Anomali is an enterprise threat-intelligence vendor; it publishes an Atlassian
-  Statuspage covering its SaaS surfaces (ThreatStream, Security Analytics,
-  Copilot) in both US and EU regions, plus a product security-advisory feed. No
-  public deprecation policy or SLA document was found on the public site (both
-  are governed by enterprise contracts). deprecation_operations left empty — no
-  public OpenAPI is available to derive deprecated operations from.
+notes: Anomali is an enterprise threat-intelligence vendor; it publishes an Atlassian
+  Statuspage covering its SaaS surfaces (ThreatStream, Security Analytics, Copilot)
+  in both US and EU regions, plus a product security-advisory feed. No public deprecation
+  policy or SLA document was found on the public site (both are governed by enterprise
+  contracts). deprecation_operations left empty — no public OpenAPI is available to
+  derive deprecated operations from.
 deprecated_operations: []
+versioning:
+  scheme: path
+  detail: 'Version in path: https://api.threatstream.com/api/<api_version>/<resource>/'
+  source: https://docs.anomali.com/Content/ThreatStream%20API/introduction_api.htm
+deprecation:
+  policy: null
+  note: No public deprecation policy; docs state specifying usernames and API keys
+    in the URL will be deprecated in a future release.
+  source: https://docs.anomali.com/Content/ThreatStream%20API/introduction_api.htm

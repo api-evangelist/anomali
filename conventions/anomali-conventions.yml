@@ -1,0 +1,18 @@
+name: Anomali conventions
+generated: '2026-10-20'
+method: searched
+source: https://docs.anomali.com/Content/ThreatStream%20API/introduction_api.htm
+auth: "Authorization: apikey <username>:<api_key> header (recommended); OAuth 2.0 client_credentials token from https://api.threatstream.com/oauth/token (limited availability), 900-second Bearer tokens. API keys in the URL will be deprecated."
+pagination:
+  style: offset
+  params: [limit, offset]
+  response_fields: [total_count, approximate_count, took, next, limit, offset]
+  note: Default 20 results; limit=0 returns up to 1000; use meta.next to iterate; update_id for large intelligence datasets.
+versioning: Version in path (https://api.threatstream.com/api/<api_version>/<resource>/); EU cloud at api-eu.threatstream.com.
+idempotency:
+  coverage: none
+  note: No idempotency key or replay protection is documented.
+reversibility:
+  coverage: none
+  note: No reversal windows documented on the introduction page.
+rate_limits: rate-limits/anomali-rate-limits.yml

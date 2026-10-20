@@ -1,0 +1,42 @@
+name: Anomali rate limits
+generated: '2026-10-20'
+method: searched
+source: https://docs.anomali.com/Content/ThreatStream%20API/introduction_api.htm
+limit_count: 6
+note: Requests that exceed these limits are automatically throttled; effective limits may be lower depending on platform health. Response headers and exhaustion status code are not documented.
+limits:
+- name: intelligence search
+  endpoint: GET /api/v2/intelligence/
+  limit_text: 150/min/per user
+  max: 150
+  window: minute
+  scope: per-user
+- name: intelligence regex filter
+  endpoint: GET /api/v2/intelligence/
+  limit_text: For intelligence requests with regex filter conditions applied, the default limit is 1 request per minute per user.
+  max: 1
+  window: minute
+  scope: per-user
+- name: threat model search
+  endpoint: GET /api/v1/threat_model_search/
+  limit_text: 750/min/per user
+  max: 750
+  window: minute
+  scope: per-user
+- name: model associated with intelligence
+  endpoint: GET /api/v1/<model_type>/associated_with_intelligence/
+  limit_text: 150/min/per user
+  max: 150
+  window: minute
+  scope: per-user
+- name: intelligence import
+  endpoint: POST /api/v2/intelligence/import/
+  limit_text: 90/hour/per org
+  max: 90
+  window: hour
+  scope: per-org
+- name: unlisted endpoints default
+  limit_text: The API requests that are not listed in the table below are limited to 1 request per minute per user unless noted otherwise for an endpoint in this document.
+  max: 1
+  window: minute
+  scope: per-user
